@@ -30,7 +30,6 @@ export async function getServerSideProps(context){
     (res)=>res.json()
   );
 
-
   return{
     props:{
       products,
