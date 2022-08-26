@@ -7,6 +7,10 @@ function Success() {
 
         const router=useRouter();
 
+        function handelpage(){
+            router.push("/");
+        }
+
   return (
     <div className=' bg-gray-500'>
             
@@ -26,8 +30,12 @@ function Success() {
                     </div>
                     <p>
                         Thankyou for shopping with Amazon!
+
+                        
                     </p>
-                    <button  className='button mt-8 mx-auto '>Go to my orders</button>
+  <button onClick={handelpage} type="button" className="text-black font-bold text-center bg-yellow-400 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300  rounded-lg text-sm px-5 py-2.5  items-center mr-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+  Go to HomePage
+</button>
                 </div>
 
             </main>
