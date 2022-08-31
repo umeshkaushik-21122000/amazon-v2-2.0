@@ -4,10 +4,9 @@ import { StarIcon } from "@heroicons/react/solid";
 import { useDispatch } from 'react-redux' 
 import { addToBasket } from '../slices/basketSlice'
 
-function InfoCard({id,title,price,description,category,image}) {
+function InfoCard({id,title,price,description,category,image,rating}) {
     const [cartStatus, setcartStatust] = useState(false);
     const dispatch = useDispatch();
-    const [rating] = useState(Math.floor(((Math.random()*10)%5)+1));
     const [hasPrime]=useState(Math.random()<0.5)
     const addItemToBasket = () => {
         const product = {
