@@ -32,7 +32,7 @@ import { useDispatch } from 'react-redux';
       <p>{title}</p>
           <div className='flex'>
             {
-            Array(rating)
+            Array(Math.floor(rating))
             .fill()
             .map((_,i) => (
               <StarIcon key={i} className='h-5 text-yellow-500 ' />
