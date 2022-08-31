@@ -61,6 +61,16 @@ function Header(products) {
         <div className=" hidden sm:flex flex-grow items-center h-10 rounded-md  cursor-pointer bg-yellow-400 hover:bg-yellow-500 ">
           <input
             className="p-2 h-full w-6 flex-grow rounded-l-md focus:outline-none"
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                router.push({
+                  pathname: '/search',
+                  query: {
+                     mytitle: input
+                  }
+              });
+              }
+          }}
             type="text"
             value={input}
             placeholder="Search ..."

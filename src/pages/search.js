@@ -9,14 +9,12 @@ import { results} from "../slices/searchSlice";
 function Search() {
      const [rating] = useState(Math.floor(((Math.random()*10)%5)+1));
     const items=useSelector(results);
-    console.log("--------------------------------------------------------------------------------------------------------",items);
     const router = useRouter();
-    const { mytitle} = router.query;
+    const  {mytitle} = router.query;
     var requiredResults=[];
-       
         items.map((item)=>{
-            if(item.title===mytitle){
-                requiredResults.push({item})
+            if(item.title.toLowerCase().includes(mytitle.toLowerCase())){
+                requiredResults.push(item)
             }
         })
    
@@ -43,9 +41,9 @@ function Search() {
                         {requiredResults.map(
                             ({id,title,price,description,category,image}) => (
                                 <InfoCard
-                                    key={id}
-                                    name={title}
-                                    img={image}
+                                    id={id}
+                                    title={title}
+                                    image={image}
                                     description={description}
                                     price={price}
                                     rating={0}
